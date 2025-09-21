@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Missing Person Reports</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <h1 class="logo">Missing Persons Portal</h1>
+    <div class="nav-links">
+      <button onclick="showPage('home')">Home</button>
+      <button onclick="showPage('report')">Report</button>
+      <button onclick="showPage('view')">View</button>
+      <button onclick="showPage('search')">Search</button>
+    </div>
+  </nav>
+
+  <!-- Pages -->
+  <main class="container">
+    <!-- Home Page -->
+    <section id="home" class="page">
+      <h2>Welcome</h2>
+      <p>This portal allows you to report, view, and search for missing persons.</p>
+      <p>Choose an option from the navigation bar above.</p>
+    </section>
+
+    <!-- Report Page -->
+    <section id="report" class="page" style="display:none;">
+      <h2>Report a Missing Person</h2>
+      <form id="reportForm" class="form-card">
+        <input type="text" name="name" placeholder="Name" required>
+        <input type="text" name="age" placeholder="Age" required>
+        <textarea name="description" placeholder="Description" required></textarea>
+        <input type="text" name="last_seen" placeholder="Last Seen Location" required>
+        <input type="text" name="contact" placeholder="Contact Info" required>
+        <button type="submit">Submit Report</button>
+      </form>
+    </section>
+
+    <!-- View Page -->
+    <section id="view" class="page" style="display:none;">
+      <h2>All Reports</h2>
+      <div id="reportsList" class="cards-container"></div>
+    </section>
+
+    <!-- Search Page -->
+    <section id="search" class="page" style="display:none;">
+      <h2>Search Reports</h2>
+      <form id="searchForm" class="form-card">
+        <input type="text" id="searchName" placeholder="Enter name">
+        <button type="submit">Search</button>
+      </form>
+      <div id="searchResults" class="cards-container"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Missing Persons Portal</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
